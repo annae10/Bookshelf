@@ -22,7 +22,8 @@ fun BookItem(
     onDeleteBook: () -> Unit
     ){
     Card(
-      modifier = modifier.fillMaxWidth()
+      modifier = modifier
+          .fillMaxWidth()
           .padding(horizontal = 14.dp, vertical = 12.dp),
         elevation = 3.dp,
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
@@ -33,29 +34,30 @@ fun BookItem(
         ){
             Column(verticalArrangement = Arrangement.Center) {
                 Text(
-                    text = "${book.title}, ${book.author}, ${book.year.toString()}",
-                    style = MaterialTheme.typography.h6)
-            }
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = book.description.toString(),
-                style = MaterialTheme.typography.caption.copy(color = Color.DarkGray)
-            )
-        }
-        Row {
-            IconButton(onClick = onEditBook){
-                Icon(
-                    imageVector = Icons.Filled.Edit,
-                    contentDescription = null,
-                    tint = Color.Gray
+                    text = "${book.title}, ${book.author} \n ${book.year.toString()}",
+                    style = MaterialTheme.typography.h6
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = book.description.toString(),
+                    style = MaterialTheme.typography.caption.copy(color = Color.DarkGray)
                 )
             }
-            IconButton(onClick = onDeleteBook){
-                Icon(
-                    imageVector = Icons.Filled.Delete,
-                    contentDescription = null,
-                    tint = Color.Gray
-                )
+            Row {
+                IconButton(onClick = onEditBook){
+                    Icon(
+                        imageVector = Icons.Filled.Edit,
+                        contentDescription = null,
+                        tint = Color.Gray
+                    )
+                }
+                IconButton(onClick = onDeleteBook){
+                    Icon(
+                        imageVector = Icons.Filled.Delete,
+                        contentDescription = null,
+                        tint = Color.Gray
+                    )
+                }
             }
         }
     }
