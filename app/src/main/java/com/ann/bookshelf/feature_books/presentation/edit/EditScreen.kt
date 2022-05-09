@@ -98,17 +98,17 @@ fun EditContent(
     BookInputText(
         text = author,
         hint = stringResource(id = R.string.author),
-        onTextChange = {onEvent(EditEvent.EnteredTitle(it))}
+        onTextChange = {onEvent(EditEvent.EnteredAuthor(it))}
     )
     BookInputText(
         text = year,
         hint = stringResource(id = R.string.year),
-        onTextChange = {onEvent(EditEvent.EnteredTitle(it))}
+        onTextChange = {onEvent(EditEvent.EnteredYear(it))}
     )
     BookInputText(
         text = description,
         hint = stringResource(id = R.string.description),
-        onTextChange = {onEvent(EditEvent.EnteredTitle(it))}
+        onTextChange = {onEvent(EditEvent.EnteredDescription(it))}
     )
 }
 }
